@@ -1,0 +1,119 @@
+{% style %}
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+  @media only screen and (max-width: 576px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.mobile-padding-top }}px;
+      padding-bottom: {{ section.settings.mobile-padding-bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="cta_section section-{{ section.id }}">
+  <div class="container">
+    {% if section.settings.scientifically_title != blank %}
+      <div class="scientifically_title">
+        <div class="main_title text-center">{{ section.settings.scientifically_title }}</div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.scientifically_sub_title != blank %}
+      <div class="scientifically_sub_title">
+        <div class="sub_title text-center">{{ section.settings.scientifically_sub_title }}</div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "boxbg_color",
+      "label": "Box Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "secimg",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "sectitle",
+      "label": "Section Title"
+    },
+    {
+      "type": "richtext",
+      "id": "secdesc",
+      "label": "Section Description"
+    },
+    {
+      "type": "text",
+      "id": "btntext",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btnurl",
+      "label": "Button URL"
+    },
+    {
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding Top",
+      "min": 70,
+      "max": 200,
+      "step": 2,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding Bottom",
+      "min": 70,
+      "max": 200,
+      "step": 2,
+      "default": 194
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-top",
+      "label": "Mobile Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile-padding-bottom",
+      "label": "Mobile Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Section"
+    }
+  ]
+}
+{% endschema %}

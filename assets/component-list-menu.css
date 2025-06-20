@@ -1,0 +1,80 @@
+.list-menu--right {
+  right: 0;
+}
+
+.list-menu--disclosure {
+  position: absolute;
+  min-width: 100%;
+  width: 20rem;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+}
+
+.list-menu--disclosure:focus {
+  outline: none;
+}
+
+.list-menu__item--active {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.list-menu__item--active:hover {
+  text-decoration-thickness: 0.2rem;
+}
+
+.list-menu--disclosure.localization-selector {
+  max-height: 18rem;
+  overflow: auto;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+.header__icon--cart .icon {
+  width: 20px;
+  height: 17px;
+}
+.header-wrapper .header {
+  margin-top: 5px;
+  position: relative;
+}
+.header-wrapper .header.header-border-block {
+  border: 1px solid #000;
+  padding: 17px 13px;
+  border-radius: 5px;
+}
+
+.desktop-localization-wrapper .disclosure__list {
+  display: flex;
+  column-gap: 5px;
+  padding: 0;
+  padding-top: 10px;
+}
+.disclosure__item:after {content: '/';}
+.disclosure__item:last-child:after {content: '';}
+.disclosure__links {
+  font-family: 'KH Teka TRIAL';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 13px;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+}
+.disclosure__item {
+  position: relative;
+  line-height: normal;
+}
+.header__inline-menu {margin: 0;}
+.header__inline-menu .list-menu__item {
+  font-family: 'KH Teka TRIAL';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 13px;
+  letter-spacing: -0.3px;
+  padding-left: 0;
+}
+.header__icons .header__icon .svg-wrapper {
+  width: auto;
+  height: auto;
+  padding-right: 5px;
+}
+.header__inline-menu .header__submenu .list-menu__item {padding-left: 12px;}

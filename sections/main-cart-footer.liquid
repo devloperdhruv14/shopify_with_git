@@ -1,0 +1,207 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
+  <div class="page-width">
+
+     <div class="range_status">
+        <div class="progress_range_label">You’re only <span class="price">€6.08</span> away from free shipping</div>
+        <div class="progress_bar_line">
+          <div class="progress_bar">
+            <div class="progress_range_line"></div>
+          </div>
+          {% comment %}<div class="complete_progress">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.75 10C19.75 15.3848 15.3848 19.75 10 19.75C4.61522 19.75 0.25 15.3848 0.25 10C0.25 4.61522 4.61522 0.25 10 0.25C15.3848 0.25 19.75 4.61522 19.75 10ZM14.912 6.30678C14.555 5.94982 13.9762 5.94982 13.6193 6.30678C13.6107 6.31541 13.6026 6.32454 13.595 6.33413L9.36308 11.7267L6.8116 9.17518C6.45464 8.81821 5.87588 8.81821 5.51892 9.17518C5.16196 9.53214 5.16196 10.1109 5.51892 10.4679L8.74428 13.6932C9.10124 14.0502 9.67999 14.0502 10.037 13.6932C10.0449 13.6853 10.0524 13.6769 10.0594 13.6681L14.9249 7.58623C15.2689 7.22834 15.2645 6.65937 14.912 6.30678Z" fill="#744682"/>
+            </svg>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    
+    <div class="cart__footer isolate section-{{ section.id }}-padding">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+
+      <div class="cart__blocks">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {{- 'icon-discount.svg' | inline_asset_content -}}
+                          {{ discount.title | escape }}
+                          (-{{ discount.total_allocated_amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <div class="totals">
+                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                </div>
+
+                <small class="tax-note caption-large rte">
+                  {%- if cart.duties_included and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- else -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5002 0.588226C7.55905 0.588226 5.20611 2.94117 5.20611 5.88234V8.23529C4.20611 8.23529 3.44141 8.99999 3.44141 9.99999V17.6471C3.44141 18.6471 4.20611 19.4118 5.20611 19.4118H15.7943C16.7943 19.4118 17.5591 18.6471 17.5591 17.6471V9.99999C17.5591 8.99999 16.7943 8.23529 15.7943 8.23529V5.88234C15.7943 2.94117 13.4414 0.588226 10.5002 0.588226ZM16.3826 9.99999V17.6471C16.3826 18 16.1473 18.2353 15.7943 18.2353H5.20611C4.85317 18.2353 4.61788 18 4.61788 17.6471V9.99999C4.61788 9.64705 4.85317 9.41176 5.20611 9.41176H15.7943C16.1473 9.41176 16.3826 9.64705 16.3826 9.99999ZM6.38258 8.23529V5.88234C6.38258 3.58823 8.20611 1.7647 10.5002 1.7647C12.7943 1.7647 14.6179 3.58823 14.6179 5.88234V8.23529H6.38258Z" fill="white"/>
+              <path d="M10.5001 11.1765C9.50006 11.1765 8.73535 11.9412 8.73535 12.9412C8.73535 13.7059 9.20594 14.3529 9.91182 14.5882V15.8823C9.91182 16.2353 10.1471 16.4706 10.5001 16.4706C10.853 16.4706 11.0883 16.2353 11.0883 15.8823V14.5882C11.7942 14.3529 12.2648 13.7059 12.2648 12.9412C12.2648 11.9412 11.5001 11.1765 10.5001 11.1765ZM10.5001 13.5294C10.1471 13.5294 9.91182 13.2941 9.91182 12.9412C9.91182 12.5882 10.1471 12.3529 10.5001 12.3529C10.853 12.3529 11.0883 12.5882 11.0883 12.9412C11.0883 13.2941 10.853 13.5294 10.5001 13.5294Z" fill="white"/>
+              </svg>
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+              </div>
+
+              <div class="drawer_pay_img">   
+               <img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/Frame_19065.png?v=1730111764">   
+             </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {% endfor %}
+
+        <div id="cart-errors"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

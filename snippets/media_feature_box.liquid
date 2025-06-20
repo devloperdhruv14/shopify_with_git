@@ -1,0 +1,45 @@
+<style>
+  .feature_gallery_grid{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .feature_gallery_box{
+    background-color: #ECECEC;
+    border-radius:5px;
+    padding:10px;   
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .feature_title{
+    font-family: 'ModelStandard SemiMono Trial';
+    font-size:10px;
+    color:#1E271D;
+    text-align:center;
+    margin-top:8px;
+  }
+  .first_feature_img{
+    width:28px;
+  }
+</style>
+<div class="feature_gallery_grid">
+  {% for feature_img in product.metafields.custom.feature_gallery_img.value %}
+    {% assign feature_img_index = forloop.index %}
+    <div class="feature_gallery_box">
+      {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+      {% if forloop.index == 1 %}{% assign class = 'img-fluid first_feature_img' %}{% else %}{% assign class = 'img-fluid' %}{% endif %}
+      {{
+        feature_img
+        | image_url: width: 40
+        | image_tag: widths: widths, class: class
+      }}
+      {% for feature_gallery_title in product.metafields.custom.feature_gallery_title.value %}
+        {% assign feature_gallery_title_index = forloop.index %}
+        {% if feature_gallery_title_index == feature_img_index %}
+          <p class="feature_title">{{ feature_gallery_title }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

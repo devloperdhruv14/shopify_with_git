@@ -1,0 +1,223 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .section-{{ section.id }}-padding .contact-address {background: {{ section.settings.bg-color }};}
+  .section-{{ section.id }}-padding .contact-label {color: {{ section.settings.label-color }};}
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="section-{{ section.id }}-padding">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="contact-address">
+        {% if section.settings.page-title or section.settings.page-subtitle %}
+          <div class="page-title-subtitle">
+            {% if section.settings.page-title %}
+              <div class="map-title contact-label">{{ section.settings.page-title }}</div>
+            {% endif %}
+            {% if section.settings.page-subtitle %}
+              <div class="map-subtitle contact-label">{{ section.settings.page-subtitle }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.address-title or section.settings.address %}
+          <div class="address-block">
+            {% if section.settings.address-title %}
+              <div class="map-title-block map-address-title contact-label">{{ section.settings.address-title }}</div>
+            {% endif %}
+            {% if section.settings.address %}
+              <div class="map-content-block map-address contact-label">{{ section.settings.address }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.email-title or section.settings.email %}
+          <div class="email-title-block">
+            {% if section.settings.email-title %}
+              <div class="map-title-block map-email-title contact-label">{{ section.settings.email-title }}</div>
+            {% endif %}
+            {% if section.settings.email %}
+              <div class="map-content-block map-email"><a href="mailto:{{ section.settings.email }}" class="contact-label">{{ section.settings.email }}</a></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.contact-title or section.settings.contact-1 or section.settings.contact-2 %}
+          <div class="contact-title-block">
+            {% if section.settings.contact-title %}
+              <div class="map-title-block map-contact-title contact-label">{{ section.settings.contact-title }}</div>
+            {% endif %}
+            {% if section.settings.contact-1 %}
+              <div class="map-content-block map-contact"><a href="tel:{{ section.settings.contact-1 }}" class="contact-label">{{ section.settings.contact-1 }}</a></div>
+            {% endif %}
+            {% if section.settings.contact-2 %}
+              <div class="map-content-block map-contact"><a href="tel:{{ section.settings.contact-2 }}" class="contact-label">{{ section.settings.contact-2 }}</a></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.business-title or section.settings.email %}
+          <div class="business-title-block">
+            {% if section.settings.business-title %}
+              <div class="map-title-block map-business-title contact-label">{{ section.settings.business-title }}</div>
+            {% endif %}
+            {% if section.settings.business-time %}
+              <div class="map-content-block map-business-time contact-label">{{ section.settings.business-time }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="contact-map">
+        {% if section.settings.map %}
+          <div class="map-block">{{ section.settings.map }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Main Contact Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "page-title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "page-subtitle",
+        "label": "Sub Title"
+      },
+      {
+        "type": "header",
+        "content": "Address"
+      },
+      {
+        "type": "text",
+        "id": "address-title",
+        "label": "Address Title"
+      },
+      {
+        "type": "richtext",
+        "id": "address",
+        "label": "Address"
+      },
+      {
+        "type": "header",
+        "content": "Email & Contact"
+      },
+      {
+        "type": "text",
+        "id": "email-title",
+        "label": "Email Title"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Email"
+      },
+      {
+        "type": "text",
+        "id": "contact-title",
+        "label": "Contact Title"
+      },
+      {
+        "type": "text",
+        "id": "contact-1",
+        "label": "Contact 1"
+      },
+      {
+        "type": "text",
+        "id": "contact-2",
+        "label": "Contact 2"
+      },
+      {
+        "type": "header",
+        "content": "Business Time"
+      },
+      {
+        "type": "text",
+        "id": "business-title",
+        "label": "Business Title"
+      },
+      {
+        "type": "richtext",
+        "id": "business-time",
+        "label": "Business Time"
+      },
+      {
+        "type": "textarea",
+        "id": "map",
+        "label": "Map"
+      },
+      {
+        "type": "header",
+        "content": "Color Section"
+      },
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "label-color",
+        "label": "Label Color"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Top padding mobile",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Bottom padding mobile",
+        "default": 36
+      }
+    ]
+  }
+{% endschema %}

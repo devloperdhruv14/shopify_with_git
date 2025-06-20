@@ -1,0 +1,65 @@
+.belgian_and_french {
+  overflow: hidden;
+}
+.belgian_and_french .belgian_and_french_title {
+    font-size: 52px;
+    line-height: 96%;
+    text-align: center;
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;  
+    letter-spacing: -0.32px;
+    margin-bottom: 38px;    
+    color: #000;
+}
+.swiper-img {
+    border-radius: 5px;
+}
+.our_partners .our_partners_title {
+    font-size: 52px;
+    line-height: 96%;
+    text-align: center;
+    letter-spacing: -0.32px;
+    margin-bottom: 53px;    
+    color: #000;
+}
+.our_partners {
+    padding: 40px 0px;
+}
+.our_partners .our_partner_logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    row-gap: 53px;
+    column-gap: 156px;
+}
+.our_partner_logo1 {
+    width: 100%;
+    max-width: 150px;
+}
+@media screen and (max-width: 768px) {
+  .belgian_and_french .belgian_and_french_title {
+    font-size: 45px;
+    margin-bottom: 34px;    
+  }
+  .our_partners .our_partners {
+    font-size: 45px;
+    margin-bottom: 20px; 
+  }
+  .our_partners .our_partner_logos {
+    row-gap: 40px;
+    column-gap: 57px;
+}
+}
+
+@media screen and (max-width: 425px) {
+  .belgian_and_french .belgian_and_french_title {
+    font-size: 38px;
+    color: #1E271D;
+  }
+  .our_partners .our_partners {
+    font-size: 38px;
+  }
+}

@@ -1,0 +1,147 @@
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form {
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 530px;
+  }
+}
+
+.newsletter-form__field-wrapper {
+  width: 100%;
+}
+
+.newsletter-form__field-wrapper .field__input {
+  padding-right: 5rem;
+}
+
+.footer-block__newsletter .newsletter-form__field-wrapper {max-width: 530px;}
+
+.newsletter-form__field-wrapper .field {
+  z-index: 0;
+}
+
+.newsletter-form__message {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.newsletter-form__message--success {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__message {
+    justify-content: flex-start;
+  }
+}
+
+.newsletter-form__button {
+  width: 4.4rem;
+  margin: 0;
+  right: var(--inputs-border-width);
+  top: 0;
+  height: 100%;
+  z-index: 2;
+}
+
+.newsletter-form__button:focus-visible {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:focus {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+  background-color: inherit;
+}
+
+.newsletter-form__button .icon {
+  width: 1.5rem;
+}
+
+.newsletter_blocks .footer-block__heading {
+  font-family: "KH Teka TRIAL";
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 50px;
+  letter-spacing: -1px;
+  padding-bottom: 27px;
+  margin: 0;
+}
+
+.newsletter-form__field-wrapper .newsletter-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+.newsletter-form__field-wrapper .field--input {
+  width: 100%;
+  padding: 14px 10px;
+  background: transparent;
+  margin: 0;
+  border: 1px solid #1E271D;
+  font-family: 'ModelStandard SemiMono Trial';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1E271D;
+  border-radius: 4px;
+}
+.newsletter-form__field-wrapper .newsletter--form__button {
+  font-family: 'ModelStandard SemiMono Trial';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: #004D80;
+  color: #DFE1DE;
+  padding: 7px 12px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.footer-newsletter-block .checkbox-newsletter-block {
+  font-family: 'KH Teka TRIAL';
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.96px;
+  position: relative;
+  padding-left: 14px;
+  cursor: pointer;
+}
+.footer-newsletter-block input[type="checkbox"] {display: none;}
+
+.footer-newsletter-block .checkbox-newsletter-block:after {
+  content: "";
+  border: 1px solid #008044;
+  width: 12px;
+  height: 12px;
+  display: block;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-newsletter-block input[type="checkbox"]:checked + .checkbox-newsletter-block:after {
+  background: #008044;
+}

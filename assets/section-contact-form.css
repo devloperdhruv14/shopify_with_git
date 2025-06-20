@@ -1,0 +1,358 @@
+.contact img {
+  max-width: 100%;
+}
+
+.contact .form__message {
+  align-items: flex-start;
+}
+
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.5rem;
+    padding-bottom: 22px;
+  }
+}
+
+.contact-address {
+  width: 100%;
+  max-width: 52%;
+  padding: 35px 20px 30px;
+}
+
+.contact-map {
+  width: 100%;
+  max-width: 48%;
+}
+
+.page-title-subtitle .map-title {
+  font-family: "KH Teka TRIAL";
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 61.44px;
+  letter-spacing: -1.3px;
+  padding-bottom: 36px;
+}
+
+.contact-address .map-subtitle {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.contact-address .map-title-block {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.contact-address .map-content-block {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.contact-address a {
+  text-decoration: none;
+}
+
+.address-block,
+.email-title-block,
+.contact-title-block,
+.page-title-subtitle,
+.map-contact-title {
+  padding-bottom: 15px;
+}
+
+.contact-map .map-block,
+.contact-map .map-block iframe {
+  height: 100%;
+}
+.contact-map iframe {
+  width: 100%;
+  min-height: 530px;
+  display: block;
+}
+
+.contact-section .title {
+  font-family: "KH Teka TRIAL";
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 50px;
+  letter-spacing: -1px;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contact-section .contact-heading-block {
+  max-width: 701px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section .title-subtitle-block {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  padding-bottom: 27px;
+}
+
+.contact-section .text-area {
+  min-height: 366px;
+}
+
+.contact-section .field__input::placeholder,
+.contact-section .customer .field input::placeholder {
+  opacity: 1;
+  color: #00000099;
+}
+
+.contact-section .field__label,
+.contact-section .customer .field label {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  padding-bottom: 8px;
+  position: static;
+  color: #1e271d;
+  margin: 0;
+}
+
+.contact-section .field__input:focus,
+.contact-section .field__input:not(:placeholder-shown),
+.contact-section .field__input:-webkit-autofill,
+.contact-section .customer .field input:focus,
+.contact-section .customer .field input:not(:placeholder-shown),
+.contact-section .customer .field input:-webkit-autofill {
+  padding: 12px 10px;
+  margin: 0;
+}
+
+.contact-section .field__input {
+  border: 1px solid #1e271d;
+  border-radius: 5px;
+  padding: 12px 10px;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+.contact-section .fields-textarea-block {
+  padding-top: 22px;
+}
+
+.contact-section .contact-btn-w-100 {
+  font-family: "ModelStandard SemiMono Trial";
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 400;
+  background: #004d80;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  padding: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.radio-field__label {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  color: #1e271d;
+  padding-left: 48px;
+  cursor: pointer;
+  position: relative;
+}
+
+.contact-section .field__label-radio-flex {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 22px;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.field__label-radio {
+  position: relative;
+}
+.field__label-radio input {
+  display: none;
+}
+.field__label-radio .radio-field__label:after {
+  content: "";
+  border: 1px solid #1e271d;
+  border-radius: 50px;
+  width: 26px;
+  height: 26px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.field__label-radio .radio-field__label:before {
+  content: "";
+  border-radius: 50px;
+  width: 18px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  opacity: 0;
+  background: #008044;
+  transform: translateY(-50%);
+}
+.field__label-radio input:checked + .radio-field__label:before {
+  opacity: 1;
+}
+.custom-tab-link {
+  font-family: "ModelStandard SemiMono Trial";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  color: #000;
+  text-decoration: none;
+}
+.tab-contact-form-block {
+  border: 1px solid #1e271d;
+  border-radius: 5px;
+}
+.custom-tab-form {
+  width: 100%;
+  max-width: 50%;
+  text-align: center;
+  padding: 24px;
+}
+.custom-customer-form {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.custom-tab-form.active {
+  background: #9cd5ba;
+}
+.custom-professional-form {
+  border-left: 1px solid #1e271d;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.tab-contact-form {
+  display: none;
+  padding-top: 50px;
+}
+.tab-contact-form.active {
+  display: block;
+}
+.contact-method {
+  padding-bottom: 22px;
+}
+
+@media screen and (max-width: 1199px) {
+  .page-title-subtitle .map-title {
+    font-size: 50px;
+    line-height: 55px;
+    padding-bottom: 24px;
+  }
+  .contact-section .title {
+    font-size: 42px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .contact-address,
+  .contact-map {
+    max-width: 100%;
+  }
+  .contact-map iframe {
+    min-height: 220px;
+  }
+  .page-title-subtitle .map-title {
+    font-size: 38px;
+    line-height: 36px;
+    padding-bottom: 20px;
+  }
+  .contact-address {
+    padding-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-section .title {
+    font-size: 38px;
+    line-height: 36px;
+  }
+  .contact-section .title-subtitle-block {
+    padding-bottom: 30px;
+  }
+  .custom-tab-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .custom-customer-form {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+  }
+  .custom-professional-form {
+    border-left: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid #1e271d;
+  }
+  .tab-contact-form {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .field__label-radio {
+    width: 100%;
+  }
+  .contact-section .field__label-radio-flex {
+    row-gap: 22px;
+  }
+  .contact__fields .fields-block {
+    padding-bottom: 15px;
+  }
+  .contact__button {
+    margin-top: 2.2rem;
+  }
+}

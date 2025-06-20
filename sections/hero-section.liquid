@@ -1,0 +1,178 @@
+{{ 'hero-section.css' | asset_url | stylesheet_tag }}
+{% style %}
+    /*====== section padding ========*/
+    #section--{{ section.id }} {
+       padding-top: {{ section.settings.padding_top }}px;
+       padding-bottom: {{ section.settings.padding_bottom }}px;
+       color:{{ section.settings.text_color}};
+     }
+
+     @media screen and (max-width: 767px) {
+       #section--{{ section.id }} {
+         padding-top: {{ section.settings.mobile_padding_top }}px;
+         padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+       }
+     }
+
+
+  #section--{{ section.id }} .hero_text_wrapper {
+    background:{{ section.settings.section_bg_color}};
+  }
+  #section--{{ section.id }} .section_title,
+  #section--{{ section.id }} .section_info_text{
+      color:{{ section.settings.text_color}};
+  }
+{% endstyle %}
+
+<section id="section--{{ section.id }}" class="hero_sec">
+  <div class="container">
+    <div class="hero_wrapper">
+      <div class="row">
+        <div class="col-lg-5 col-12 hero_img_wrapper">
+          {% if section.settings.hero_image != blank %}
+            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+            {% assign class = 'img-fluid' %}
+            {%- capture sizes -%}
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+            {%- endcapture -%}
+            {{
+              section.settings.hero_image
+              | image_url: width: 1500
+              | image_tag: sizes: sizes, widths: widths, class: class
+            }}
+          {% endif %}
+        </div>
+        <div class="col-lg-7 col-12 hero_text_wrapper">
+          <div class="hero_text">
+            {% if section.settings.section_heading != blank %}
+              <h1 class="section_title">{{ section.settings.section_heading }}</h1>
+            {% endif %}
+            {% if section.settings.info_text != blank %}
+              <div class="section_info_text">{{ section.settings.info_text }}</div>
+            {% endif %}
+            {% if section.settings.button_url != blank %}
+              <a class="main_btn" href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a>
+            {% endif %}
+            
+            {% if section.settings.button_url != blank %}
+              <div class="mob_button">
+                <a class="main_btn outline-btn" href="{{ section.settings.mob_button_url }}">{{ section.settings.mob_button_text }}</a>
+              </div>
+            {% endif %}
+            
+            <div class="rating_box">
+              <img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/rating_c97f88ac-74d3-455f-85e7-30b625a5f108.png?v=1729926835">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Hero section",
+  "settings": [
+      {
+        "type": "color_background",
+        "id": "section_bg_color",
+        "label": "Section bg color"
+      },
+      {
+        "type": "color_background",
+        "id": "text_color",
+        "label": "Text color"
+      },
+       {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero image"
+      },
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Section heading"
+      },
+      {
+        "type": "richtext",
+        "id": "info_text",
+        "label": "Info text"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
+      },
+      {
+        "type": "text",
+        "id": "mob_button_text",
+        "label": "Mobile button text"
+      },
+      {
+        "type": "url",
+        "id": "mob_button_url",
+        "label": "Mobile button url"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Mobile Padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 0
+      }
+  ],
+  "presets": [
+    {
+      "name": "Hero section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,120 @@
+{{ 'section-b2b-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 425px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="belgian_and_french section-{{ section.id }}-padding">
+    <h1 class="belgian_and_french_title section_title">Over 3000 Belgian and French doctors and pharmacists trained </h1>
+    <div class="swiper belgian_and_french_llider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/1_6abe216a-4fe9-4d3a-8035-39b8a8a3b9c0.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_1" /></div>
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/2_dcf124de-2fad-4612-823a-494399ae5943.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_2" /></div>
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/3_11d52e8c-bedf-4f81-b805-b4f100533f85.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_3" /></div>
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/4_8a0e1a16-a1b6-4863-8a52-e6cdf49501b0.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_4" /></div>
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/5_461d6502-462c-4630-9a52-ec84ba8434d3.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_5" /></div>
+        <div class="swiper-slide"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/6_f2b9eb22-475a-4073-9515-2700823f699d.jpg?v=1730099220" class="swiper-img img-fluid" loading="lazy" width="100%" height="100%" alt="image_6" /></div>
+      </div>
+    </div>
+</section>
+<section class="our_partners">
+  <div class="container"> 
+    <h2 class="our_partners_title section_title">Our Partners</h2>
+    <div class="our_partner_logos">
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_1.png?v=1730119659" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_1" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_2.png?v=1730119678" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_2" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_3.png?v=1730119701" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_3" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_4.png?v=1730119702" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_4" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_5.png?v=1730119702" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_5" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_6.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_6" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_7.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_7" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_8.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_8" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_9.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_9" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_10.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_10" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_11.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_11" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_12.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_12" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_13.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_13" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_14.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_14" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_15.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_15" /></div>
+      <div class="our_partner_logo1"><img src="https://cdn.shopify.com/s/files/1/0677/8041/1645/files/partner_img_16.png?v=1730119733" class="img-fluid" loading="lazy" width="100%" height="100%" alt="logo_16" /></div>
+    </div>
+  </div>  
+</section>
+
+
+{% schema %}
+  {
+    "name": "Title with Slider",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      },
+      {
+        "type": "header",
+        "content": "Mobile padding"
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title with Slider"
+      }
+    ]
+  }
+{% endschema %}

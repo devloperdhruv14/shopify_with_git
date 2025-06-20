@@ -1,0 +1,11 @@
+.utility-bar {padding-top: 27px; background: #fff;}
+.utility-bar .announcement-bar {border-radius: 5px;}
+.utility-bar .announcement-bar__message {
+  font-family: 'KH Teka TRIAL';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 15.36px;
+  letter-spacing: -0.3px;
+  padding: 10px 0;
+  min-height: auto;
+}

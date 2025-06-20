@@ -1,0 +1,141 @@
+.gwb_sec .gwb_sec_row {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.collection_grid_main {
+    width: 100%;
+    max-width: calc(64% - 30px);
+    padding: 23px 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.product_banner_main {
+    width: 100%;
+    max-width: calc(36% - 30px);
+    padding: 10px 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow:hidden;
+}
+
+.gwb_sec .gwb_text .section_title {
+    font-size: 52px;
+    line-height: 50px;
+    letter-spacing: -1.0px;
+    padding-bottom: 15px;
+}
+
+.section_info_text {
+  font-family: ModelStandard SemiMono Trial;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: -0.1px;
+}
+
+.mobility-products-collection {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.mobility-products-collection .card-wrapper {
+    width: 100%;
+}
+.product_banner_main .gwb_text {
+    padding: 0px 10px;
+}
+.product_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.product_banner_main .product_wrapper {
+    max-width: 250px;
+    margin: 0px auto;
+    text-align: center;
+}
+.gwb_btn_wrapper {
+    position: relative;
+    z-index: 1;
+}
+.banner_product_wrapper{
+  position:relative;
+  z-index:1;
+}
+.banner_product_wrapper:after {
+    content: "";
+    background: #fff;
+    width: 600px;
+    height: 500px;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    z-index: 0;
+}
+.product_wrapper .pro_price {
+    font-size: 16px;
+    line-height: 16px;
+}
+.product_wrapper .pro_title {
+    font-family: KH Teka TRIAL;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.product_wrapper .pro_text {
+    font-family: ModelStandard SemiMono Trial;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0;
+    color: #1E271D;
+    max-width: 195px;
+}
+.banner_product_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner_product_wrapper .gwb_btn_wrapper {
+    margin-top: 20px;
+}
+@media(max-width:1199px){
+  .gwb_sec .gwb_sec_row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .collection_grid_main,
+  .product_banner_main{
+    max-width:100%;
+  }
+  .banner_product_wrapper:after{
+    display:none;
+  }
+  .product_banner_main {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .product_banner_main .gwb_text, 
+  .product_banner_main .banner_product_wrapper {
+    width: 50%;
+  }
+}
+@media(max-width:767px){
+  .gwb_sec .gwb_text .section_title {
+    font-size: 38px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0;
+  }
+}

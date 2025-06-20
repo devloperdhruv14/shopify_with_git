@@ -1,0 +1,296 @@
+.cart__checkout-button {
+    background: #004D80;
+    border-radius: 5px;
+    gap: 10px;
+}
+.cart__checkout-button:after, .cart__checkout-button:before {
+    border-radius: 5px;
+}
+.cart__checkout-button:hover:after {
+  box-shadow: none;
+}
+.cart-drawer .drawer__inner {
+  width: 400px;
+  padding: 0 20px; 
+}
+.cart-drawer .cart-items .cart-item__totals {
+  pointer-events: unset;
+}
+.drawer .cart-drawer__collection {
+  display: block !important;
+  margin: 0px;
+}
+cart-drawer.drawer .drawer__header {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+cart-drawer.drawer .cart-items thead th {
+    border: 0 !important;
+}
+.cart-drawer cart-drawer-items .cart-items td {
+    padding-top: 0;
+    padding-bottom: 22px;
+}
+cart-drawer-items .drawer__cart-items-wrapper .cart-items thead {
+    display: none;
+}
+cart-drawer.drawer .drawer__header h2.drawer__heading {
+    font-size: 26px;
+    line-height: 36.4px;
+    font-weight: 400;
+    color: #1E271D;
+}
+cart-drawer.drawer .cart-item__name.h4.break {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: 'KH Teka TRIAL';
+    color: #1E271D;
+}
+cart-drawer.drawer .cart-item__name:hover {
+  text-decoration: none;
+}
+.cart-drawer .cart-items, .cart-drawer tbody {
+  border-bottom: 1px solid #1E271D;
+}
+.cart-drawer .cart-items .cart-item__quantity {
+  padding: 0px; 
+}
+.cart-drawer .cart-item {
+  padding-bottom: 30px;
+}
+.cart-drawer td.cart-item__media {
+  width: 50px;
+  height: 50px;
+}
+.cart-drawer .cart-item__price-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.cart-drawer .cart-item__price-wrapper .price{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25.2px;
+    font-family: 'ModelStandard SemiMono Trial';
+}
+.cart-drawer cart-remove-button .button {
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    font-size: 12px;
+    line-height: 16.8px;
+    font-weight: 400;
+    font-family: 'KH Teka TRIAL';
+    color: #1E271D;
+    text-decoration: underline;
+}
+.cart-drawer .cart-item cart-remove-button {
+  margin-left: 0px;
+}
+.cart-drawer .cart-items td.cart-item__details {
+    padding-left: 6px !important;
+    padding-bottom: 5px !important;
+}
+.cart-drawer .cart-items pan.price.price--end {
+    font-size: 14px;
+    line-height: 25.2px;
+    color: #1E271D;
+}
+.cart-drawer .quantity-popover-container {
+  padding-left: 6px;
+}
+.cart-drawer .quantity:after {
+  border-radius: 5px;
+}
+.quantity {
+  min-height: auto;
+}
+.cart-drawer quantity-input .quantity__button {
+  font-size: 12px;
+}
+.cart-drawer .totals {
+  margin: 0;
+  margin-bottom: 12px;
+}
+.cart-drawer p.totals__total-value {
+    color: #1E271D;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21.6px;
+    font-family: 'ModelStandard SemiMono Trial';
+}
+.drawer_pay_img {
+  margin-top: 12px;
+}
+
+/* Progressbar */
+.range_status {
+  text-align: center;
+  padding: 23px 0px 20px;
+}
+
+.progress_range_label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  padding-bottom: 10px;
+  text-align: left;
+  font-family: 'KH Teka TRIAL';
+}
+
+.progress_range_label .price {
+  font-weight: 600;
+  color: #000000;
+}
+.cart-drawer__empty-content {
+  padding: 80px 15px;
+}
+
+h2.cart__empty-text {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.cart-drawer__collection h3 {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 7px;
+    letter-spacing: -0.4px;
+    font-weight: 400;
+}
+
+.progress_bar {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #9CD5BA;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress_bar .progress_range_line {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #008044;
+  height: 6px;
+  width: 0;
+  border-radius: 10px;
+}
+.cart-drawer__collection .quick-add__submit {
+  padding: 0px;
+  margin-top: 7px;
+  background: #004D80;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: 'ModelStandard SemiMono Trial';
+}
+.cart-drawer__collection .product-card-wrapper .card__heading {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'ModelStandard SemiMono Trial';
+    letter-spacing: normal;
+    color: #000000;
+}
+.cart-drawer__collection .card__information {
+    padding-bottom: 0;
+    padding-top: 16px;
+    font-weight: 500;
+    font-family: 'ModelStandard SemiMono Trial';
+}
+.cart-drawer__collection .quick-add__submit:after {
+  border-radius: 5px;
+}
+.cart-drawer__collection .quick-add__submit :hover:after {
+  box-shadow: none;
+}
+/* .cart-drawer__collection .card-wrapper {
+  background: #EFF8EC;
+} */
+.cart-drawer__collection .card.card--standard.card--media {
+    background: transparent;
+    border-radius: 0;
+}
+.cart-drawer__collection .card-wrapper .card {
+  text-align: center;
+}
+.cart-drawer__collection .card_product_price {
+    color: #000000;
+    font-family: 'ModelStandard SemiMono Trial';
+    font-size: 9px;
+    line-height: 12px;
+    padding-bottom: 16px;
+}
+.cart-item__quantity quantity-input.quantity {
+    width: 51px;
+    padding: 2px 5px;
+}
+.cart-item__quantity quantity-input.quantity .quantity__button {
+    min-width: unset !important;
+    width: unset !important;
+}
+.cart-item__quantity quantity-input.quantity .quantity__button .svg-wrapper {
+    width: 8px !important;
+}
+.cart-item__quantity quantity-input.quantity input {
+    padding: 0 !important;
+    width: 20px !important;
+}
+.cart-drawer__collection .swiper-wrapper {
+    display: flex;
+}
+.cart-drawer__collection .swiper-wrapper .swiper-slide {
+    height: unset;
+    display: flex;
+    flex-direction: column;
+}
+.cart-drawer__collection .swiper-wrapper .swiper-slide .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: #eff8ec;
+}
+.cart-drawer__collection .swiper-wrapper .swiper-slide .card-wrapper .card.card--media {
+    height: unset;
+}
+.cart-drawer__collection .swiper-wrapper .swiper-slide .card-wrapper  product-form {
+    margin-top: auto;
+}
+
+
+/* Cart page css */
+.cart-page .page-width {
+  padding: 0 15px;
+  max-width: 1402px;
+}
+.cart_grid_main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart_grid_main .collection_product {
+  width: 20%;
+  padding: 0 2px;
+}
+.cart-page cart-remove-button {
+  text-decoration: underline;
+}
+.cart_grid_main cart-remove-button .button{
+   min-width: 100%;
+   min-height: 100%; 
+}
+.cart_grid_main .cart-items td {
+  padding-top: 0px;
+}
+.cart-page .cart-items td {
+  padding-top: 0px;
+}
+.cart-page td.cart-item__details {
+    padding-left: 6px !important;
+}
